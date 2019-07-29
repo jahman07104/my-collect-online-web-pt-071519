@@ -1,21 +1,24 @@
 
- def my_collect(languages)
-   
-    my_collect(collection) do |lang|
-    lang.upcase 
-    empty_array = []
-    i= 0
-  
+def my_collect(array)
+  i = 0
+  collection=[]
   while i < array.length
-  empty_array << yield(array[i])
+  collection << yield(array[i])
     i += 1
-end
-  
   end
   collection
- end
-#   
-# end
+end
+my_collect(["Tim Jones", "Tom Smith", "Jim Campagno"]) { |name| name.split(" "). first }
+def my_collect(array)
+  i = 0
+  collection=[]
+  while i < array.length
+  collection << yield(array[i])
+    i += 1
+  end
+  collection
+end
+my_collect(["ruby", "javascript", "python"," objective-c"]) { |lang| lang.upcase}
 
 
 
